@@ -58,3 +58,20 @@ This repo also runs a **seasonal ARIMA (SARIMA)** with residual checks.
 - ACF/PACF of residuals should show no strong spikes → indicates whiteness.
 - Ljung–Box p‑values > 0.05 suggest residuals are uncorrelated (good).
 - QQ plot close to the line indicates approximately normal residuals.
+
+## Diagnostics Preview
+
+Residual checks from the SARIMA run:
+
+**Plots**
+- Autocorrelation (ACF):  
+  ![Residuals ACF](output/diag_resid_acf.png)
+- Partial Autocorrelation (PACF):  
+  ![Residuals PACF](output/diag_resid_pacf.png)
+- Normality (QQ):  
+  ![Residuals QQ](output/diag_resid_qq.png)
+
+**Tables**
+- [Ljung–Box p‑values (lags 12 & 24)](output/diag_ljungbox.csv)
+- [SARIMA 12‑month forecast table](output/sarima_forecast_12m.csv)
+- [Residuals series](output/sarima_residuals.csv)
