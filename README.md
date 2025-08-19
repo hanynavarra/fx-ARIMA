@@ -24,3 +24,4 @@ This project downloads PHP/JPY exchange rate data from Yahoo Finance, aggregates
 ## Notes
 - The pipeline picked ARIMA(1,1,0) by AIC on log‑levels.
 - Forecasts are shown in levels (JPY per PHP). Bands are model prediction intervals.
+ # add a newline
