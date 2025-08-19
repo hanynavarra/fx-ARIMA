@@ -41,3 +41,20 @@ This project downloads PHP/JPY exchange rate data from Yahoo Finance, aggregates
 ## Notes
 - The pipeline picked ARIMA(1,1,0) by AIC on log‑levels.
 - Forecasts are shown in levels (JPY per PHP). Bands are model prediction intervals.
+
+## Diagnostics
+This repo also runs a **seasonal ARIMA (SARIMA)** with residual checks.
+
+**Run diagnostics**
+    python diagnostics.py
+
+**Artifacts (in `output/`):**
+- `sarima_forecast_12m.csv`, `sarima_forecast_12m.png`
+- `sarima_residuals.csv`
+- `diag_resid_acf.png`, `diag_resid_pacf.png`, `diag_resid_qq.png`
+- `diag_ljungbox.csv` (Ljung–Box p‑values at lags 12 and 24)
+
+**Interpretation tips**
+- ACF/PACF of residuals should show no strong spikes → indicates whiteness.
+- Ljung–Box p‑values > 0.05 suggest residuals are uncorrelated (good).
+- QQ plot close to the line indicates approximately normal residuals.
